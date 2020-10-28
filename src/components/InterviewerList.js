@@ -7,8 +7,8 @@ export default function InterviewerList(props) {
     <InterviewerListItem
       name={interviewer.name}
       avatar={interviewer.avatar}
-      selected={interviewer.name === props.interviewer}
-      setInterviewer={(event) => props.setInterviewer(interviewer.name)}
+      selected={interviewer.name === props.value}
+      setInterviewer={(event) => props.onChange(interviewer.name)}
     />
   ));
   return (
