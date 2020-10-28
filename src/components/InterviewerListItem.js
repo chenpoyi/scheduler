@@ -6,7 +6,6 @@ export default function InterviewerListItem(props) {
   const InterviewerListItemClass = classnames({
     "interviewers__item--selected": props.selected
   });
-  const InterviewersImageClass = classnames("interviewers__item-image")
 
   return (
     <li 
