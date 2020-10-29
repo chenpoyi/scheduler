@@ -11,5 +11,6 @@ export function getAppointmentsForDay(state, day) {
   }
   const filteredAppointments = filteredIndices[0].appointments.map(index => state.appointments[index]
   );
+  console.log("this one: ",filteredIndices[0].appointments)
   return filteredAppointments;
 }
