@@ -130,7 +130,7 @@ storiesOf("InterviewerList", module)
   .add("Preselected", () => (
     <InterviewerList
       interviewers={interviewers}
-      value={"Mildred Nazir"}
+      value={2}
       onChange={action("setInterviewer")}
     />
   ));

@@ -6,17 +6,16 @@ export default function useVisualMode(initial) {
 
   const transition = function(newMode, replace = false){
     setMode(newMode);
-    console.log('here: ', history)
-    if(replace){
+    {replace&&
       history.pop();
     }
     setHistory(history.concat([newMode]));
-    console.log('after: ', history);
     
   };
 
   const back = function(){
-    if(history.length > 1){
+    {
+      history.length > 1 &&
       history.pop();
       setHistory([...history]);
       const last = history[history.length - 1];

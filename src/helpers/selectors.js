@@ -19,7 +19,7 @@ export function getInterviewersForDay(state, day) {
    //... returns an array of appointments for that day
   //console.log("days: ", state.days);
   
-  if(state.days.length === 0 ){
+  if(!state.days.length){
     return [];
   }
   const filteredIndices = state.days.filter(dayItem => dayItem.name === day);
