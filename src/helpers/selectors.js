@@ -16,7 +16,7 @@ export function getAppointmentsForDay(state, day) {
 }
 
 export function getInterviewersForDay(state, day) {
-   //... returns an array of appointments for that day
+   //... returns an array of interviewers for that day
   //console.log("days: ", state.days);
   
   if(!state.days.length){
