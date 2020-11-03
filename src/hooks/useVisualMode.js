@@ -7,9 +7,6 @@ export default function useVisualMode(initial) {
   const [history, setHistory] = useState([initial]);
 
   const transition = function (newMode, replace = false) {
-    // console.log("NEW MODE: ", newMode);
-    console.log("BEFORE HISTORY: ", history);
-    // console.log("REPLACE: ", replace);
 
     if (replace) {
       setHistory((prev) => [...prev.slice(0, prev.length - 1), newMode]);
@@ -17,11 +14,9 @@ export default function useVisualMode(initial) {
       setHistory((prev) => [...prev, newMode]);
     }
     setMode(newMode);
-    // console.log("HISTORY: ", history);
   };
 
   const back = function () {
-    // console.log("BACKING");
     
     if(history.length > 1){
       const newHistory = [...history];
@@ -31,8 +26,6 @@ export default function useVisualMode(initial) {
     setMode(newHistory[newHistory.length - 1]);
     setHistory(newHistory);
     }
-    // console.log(history);
   };
-  //console.log("HISTORY: ", history)
   return { mode, transition, back };
 }
