@@ -107,16 +107,16 @@ const useApplicationData = (i) => {
   };
 
   useEffect(() => {
-    const webSocket = new WebSocket(process.env.REACT_APP_WEBSOCKET_URL)
+    // const webSocket = new WebSocket(process.env.REACT_APP_WEBSOCKET_URL)
 
-    webSocket.onopen = function (event) {
-      webSocket.send("PING"); 
-    };
+    // webSocket.onopen = function (event) {
+    //   webSocket.send("PING"); 
+    // };
     // webSocket.onmessage = function(event){
     // }
 
-    webSocket.onmessage = function (event) {
-    }
+    // webSocket.onmessage = function (event) {
+    // }
     Promise.all([
       axios.get("/api/days"),
       axios.get("/api/appointments"),
