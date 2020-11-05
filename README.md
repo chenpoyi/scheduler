@@ -9,22 +9,22 @@ The purpose of this project was to learn to build and test a React application a
 
 ## Final Product
 
-![](https://github.com/chenpoyi/scheduler/blob/master/docs/application.png)
+!["Full site screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/application.png)
 The root shows the application with the default day set to Monday.
 
-![](https://github.com/chenpoyi/scheduler/blob/master/docs/daylist.png)
+!["DayList screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/daylist.png)
 The sidebar is a list showing all of the days available and the number of remaining spots in each.
 
-![](https://github.com/chenpoyi/scheduler/blob/master/docs/form.png)
+!["Form screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/form.png)
 Clicking a vacant spot will bring up a form where the user can enter their name and select one of the available interviewers.
 
-![](https://github.com/chenpoyi/scheduler/blob/master/docs/show.png)
+!["Show screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/show.png)
 Timeslots with booked interviews will display the name of the person and the name of the interviewer.
 
-![](https://github.com/chenpoyi/scheduler/blob/master/docs/confirm.png)
+!["Confirm screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/confirm.png)
 The confirmation alert shows when user tries to delete an interview. 
 
-![](https://github.com/chenpoyi/scheduler/blob/master/docs/error.png)
+!["Error screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/error.png)
 An error message shows when there is an error while saving or deleting an interview.
 
 
