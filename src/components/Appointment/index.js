@@ -37,7 +37,7 @@ export default function Appointment(props) {
     };
     //alert("HELLO");
     transition(SAVING);
-    
+    console.log("HI");
     props.bookInterview(props.id, interview)
     .then(()=>{
       transition(SHOW)
