@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
-
+  //Changes current mode to show diff component
   const transition = function (newMode, replace = false) {
     if (replace) {
       setHistory((prev) => [...prev.slice(0, prev.length - 1), newMode]);
@@ -13,6 +13,8 @@ export default function useVisualMode(initial) {
     }
     setMode(newMode);
   };
+
+  //Goes back to previous mode
   const back = function () {
     if (history.length > 1) {
       const newHistory = [...history];

@@ -29,6 +29,7 @@ export function getInterviewersForDay(state, day) {
 }
 
 export function getInterview(state, interview) {
+  //returns interview object given info for interview
   if(!interview) return null;
 
   const interviewObj = {};

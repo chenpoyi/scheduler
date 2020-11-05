@@ -6,6 +6,7 @@ import { getAppointmentsForDay, getInterviewersForDay, getInterview } from "help
 import DayList from "components/DayList"
 import useApplicationData from "hooks/useApplicationData";
 
+//Renders the whole page 
 export default function Application(props) {
   const {
     state,
@@ -15,9 +16,11 @@ export default function Application(props) {
   } = useApplicationData();
   
   const dailyAppointments = getAppointmentsForDay(state, state.day);
+
+  //Renders the schedule for specific day
   const AppointmentItems = dailyAppointments.map((appointment) => {
-  const interview = getInterview(state, appointment.interview);
-  const interviewers = getInterviewersForDay(state, state.day);
+    const interview = getInterview(state, appointment.interview);
+    const interviewers = getInterviewersForDay(state, state.day);
 
     return (
       <Appointment
@@ -32,12 +35,6 @@ export default function Application(props) {
     );
   });
 
-  
-
-  
-  
-
-  
   return (
     <main className="layout">
       <section className="sidebar">
@@ -64,7 +61,6 @@ export default function Application(props) {
       <section className="schedule">
         {AppointmentItems}
         <Appointment key="last" time="5pm" bookInterview={bookInterview}/>
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
       </section>
     </main>
   );

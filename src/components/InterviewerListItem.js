@@ -3,6 +3,7 @@ import "components/InterviewerListItem.scss"
 const classnames = require('classnames');
 
 export default function InterviewerListItem(props) {
+  //Adds class name if current interviewer is selected
   const InterviewerListItemClass = classnames({
     "interviewers__item--selected": props.selected
   });

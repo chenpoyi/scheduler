@@ -3,6 +3,7 @@ import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
 import PropTypes from 'prop-types';
 function InterviewerList(props) {
+  //Renders interviewer for each interview from prop, with the selected interviewer showing name and white background
   const list = props.interviewers.map((interviewer) => (
     <InterviewerListItem
       key={interviewer.id}

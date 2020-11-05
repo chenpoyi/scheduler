@@ -28,12 +28,15 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
+  /* Saving Interview
+  Transitions mode to SAVING, make bookInterview call and transitions to SHOW the made booking
+  Handles error while saving
+  */
   function save(name, interviewer) {
     const interview = {
       student: name,
       interviewer,
     };
-    //alert("HELLO");
     transition(SAVING);
     props
       .bookInterview(props.id, interview)
@@ -44,7 +47,10 @@ export default function Appointment(props) {
         transition(ERROR_SAVE, true);
       });
   }
-
+  /* Canceling Interview
+  Transitions mode to DELETING, makes cancelInterview call and transitions to EMPTY mode.
+  Handles error while deleting
+  */
   function remove() {
     transition(DELETING, true);
     props
@@ -57,8 +63,7 @@ export default function Appointment(props) {
     transition(CONFIRM);
   }
 
-  //props.bookInterview(props.id, props.interview);
-
+  //Renders different compoenents given the current mode.
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />

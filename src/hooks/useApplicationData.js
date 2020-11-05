@@ -8,12 +8,16 @@ const defaultState = {
   appointments: [],
   interviewers: [],
 };
+//Retrieves and sends all data from API, make changes to state"
 
 const useApplicationData = (i) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
+  //Sets the current day being displayed
   const setDay = (day) => dispatch({ type: SET_DAY, value: day });
+  //Sets the state 
   const setState = (newState) =>
     dispatch({ type: SET_APPLICATION_DATA, value: newState });
+  //For creating or editing interview: Makes axios request, changes state to reflect change.
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -27,6 +31,7 @@ const useApplicationData = (i) => {
 
     const dayIndex = getDayIndex(state.day);
     let day;
+    //Only decrease spots remaining when creating new interview
     if (state.appointments[id].interview) {
       day = {
         ...state.days[dayIndex],
@@ -40,15 +45,16 @@ const useApplicationData = (i) => {
 
     const days = [...state.days];
     days[dayIndex] = day;
-
+    //Request to API for updated interview data
     return axios
       .put(`/api/appointments/${id}`, appointment)
       .then((response) => {
         setState({ ...state, appointments, days });
       });
   }
-
+  //Cancel interview: Makes axios request, and changes state to reflect change
   const cancelInterview = function (id) {
+    //Sets interview to null for the specific appointment object
     const appointment = {
       ...state.appointments[id],
       interview: null,
@@ -74,11 +80,13 @@ const useApplicationData = (i) => {
     });
   };
 
+  //Helper function to retrieve the index of current day in the days array
   const getDayIndex = function (day) {
     const match = (element) => element.name === day;
     return state.days.findIndex(match);
   };
 
+  //Retrieves updated data from api 
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
