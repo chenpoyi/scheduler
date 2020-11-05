@@ -130,7 +130,7 @@ const useApplicationData = (i) => {
     });
 
     //});
-  }, [state]);
+  }, []);
 
   return { state, setDay, bookInterview, cancelInterview };
 };

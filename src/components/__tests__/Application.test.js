@@ -92,7 +92,6 @@ describe("Application", () => {
   const day = getAllByTestId(container, "day").find(day =>
     queryByText(day, "Monday")
   );
-  console.log(prettyDOM(day));
   expect(getByText(day, "2 spots remaining")).toBeInTheDocument();
   });
 
@@ -125,7 +124,6 @@ describe("Application", () => {
       const day = getAllByTestId(container, "day").find(day =>
         queryByText(day, "Monday")
       );
-      console.log(prettyDOM(day));
       expect(getByText(day, "1 spot remaining")).toBeInTheDocument();
   
   
@@ -158,7 +156,6 @@ describe("Application", () => {
       expect(getByText(appointment, "Error")).toBeInTheDocument();
 
   
-      console.log(prettyDOM(appointment))
   
   });
 
@@ -191,7 +188,6 @@ describe("Application", () => {
     expect(getByText(appointment, "Error")).toBeInTheDocument();
 
 
-    console.log(prettyDOM(appointment))
   
   
   });
