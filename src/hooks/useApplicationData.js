@@ -1,9 +1,6 @@
 import { useEffect, useReducer } from "react";
 import axios from "axios";
-import reducer, {
-  SET_DAY,
-  SET_APPLICATION_DATA,
-} from "reducers/application";
+import reducer, { SET_DAY, SET_APPLICATION_DATA } from "reducers/application";
 
 const defaultState = {
   day: "Monday",
@@ -18,12 +15,11 @@ const useApplicationData = (i) => {
   const setState = (newState) =>
     dispatch({ type: SET_APPLICATION_DATA, value: newState });
   function bookInterview(id, interview) {
-
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
     };
-    
+
     const appointments = {
       ...state.appointments,
       [id]: appointment,
@@ -31,7 +27,7 @@ const useApplicationData = (i) => {
 
     const dayIndex = getDayIndex(state.day);
     let day;
-    if(state.appointments[id].interview){
+    if (state.appointments[id].interview) {
       day = {
         ...state.days[dayIndex],
       };
@@ -99,6 +95,5 @@ const useApplicationData = (i) => {
   }, []);
 
   return { state, setDay, bookInterview, cancelInterview };
-  
 };
 export default useApplicationData;
