@@ -8,9 +8,6 @@ export default function reducer(state, action) {
       return { ...state, day: action.value };
     case SET_APPLICATION_DATA:
       return action.value;
-    // case SET_INTERVIEW: {
-    //   return; /* insert logic */
-    // }
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`

@@ -18,8 +18,8 @@ export default function Form(props) {
   };
 
   function validate() {
-    if(name === "") {
-      console.log("IN HERE: ", name)
+    if (name === "") {
+      console.log("IN HERE: ", name);
       setError("Student name cannot be blank");
       return;
     }
@@ -56,10 +56,7 @@ export default function Form(props) {
           <Button danger onClick={cancel}>
             Cancel
           </Button>
-          <Button
-            confirm
-            onClick={validate}
-          >
+          <Button confirm onClick={validate}>
             Save
           </Button>
         </section>

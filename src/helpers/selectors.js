@@ -32,7 +32,6 @@ export function getInterview(state, interview) {
   if(!interview) return null;
 
   const interviewObj = {};
-
   interviewObj.student = interview.student;
   interviewObj.interviewer = state.interviewers[interview.interviewer];
   return interviewObj;
