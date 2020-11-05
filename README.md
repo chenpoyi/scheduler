@@ -7,6 +7,9 @@ The testing of this project involve unit, integration and end-to-end testing.
 
 The purpose of this project was to learn to build and test a React application and is not intended for commercial use.
 
+A production version of the application has been deployed using CircleCI and Netlify and can be accessed here:
+https://epic-jepsen-f2f4a5.netlify.app/
+
 ## Final Product
 
 !["Full site screenshot"](https://github.com/chenpoyi/scheduler/blob/master/docs/application.png)
